@@ -1,4 +1,5 @@
 import Data_handling
+import pandas as pd
 import Prompts
 import pyautogui
 import random
