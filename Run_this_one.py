@@ -40,7 +40,7 @@ def pause():
 
 
 def roll(p1, p2, x):
-    global p2_round_total
+    global p2_round_total, p1_round_total
     r1_p1 = random.randint(1,6)
     roll_out(r1_p1,p1, x)
     r2_p1 = random.randint(1,6)
@@ -56,6 +56,7 @@ def roll(p1, p2, x):
         double_p1 = random.randint(1,6)
         doubles(double_p1, p1, x)
         p1_round += double_p1
+        p1_round_total = p1_round
 
     elif (p1_round % 2) == 0:
         p1_round_total = 10 + p1_round
@@ -86,6 +87,7 @@ def roll(p1, p2, x):
         double_p2 = random.randint(1, 6)
         doubles(double_p2, p1, x)
         p2_round += double_p2
+        p2_round_total = p2_round
 
     elif (p2_round % 2) == 0:
         p2_round_total = 10 + p2_round
