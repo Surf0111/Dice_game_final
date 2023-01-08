@@ -20,7 +20,7 @@ global p2_total
 def doubles(num, player, x):
     pyautogui.confirm(f'{player} rolled a double! You got {num} bonus points!', title=f'Round {x}')
 
-
+# this outputs the value of the roll to the screen
 def roll_out(num, player, x):
     pyautogui.confirm(f'{player} rolled {num}!', title=f'Round {x}')
 
@@ -28,7 +28,7 @@ def roll_out(num, player, x):
 def round_results(p1, r1, p2, r2, x):
     pyautogui.alert(f'{p1}: {r1} points\n{p2}: {r2}', title=f'Round {x}')
 
-
+# this shows the players a running total of the 
 def totals(p1, t1, p2, t2):
     pyautogui.alert(f'{p1}: {t1} points\n{p2}: {t2}', title='Total')
 
@@ -104,7 +104,7 @@ def roll(p1, p2, x):
     t2 = sum(p2_total)
     totals(p1, t1, p2, t2)
 
-
+# adds the score to the list of results
 def p1_add(score):
     global p1_total
     p1_total.append(score)
@@ -145,7 +145,7 @@ def tiebreak(p1, p2, x):
 
 def game():
     global x
-    for x in range(1,2):
+    for x in range(1,6):
         roll(player_1, player_2, x)
         pause()
 
