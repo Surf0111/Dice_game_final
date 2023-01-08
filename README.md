@@ -4,6 +4,7 @@
 3. using Pycharm open the existing project
 
 Option 1
+
 When opened in pycharm, create the virtual environment using requirements.txt in python 3.10
 Install all the packages via the prompt int the top right hand corner untill everything is installed.
 
