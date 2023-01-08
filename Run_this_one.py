@@ -5,6 +5,7 @@ import pyautogui
 import random
 import time
 from cryptography.fernet import Fernet
+
 global p1_total
 global p2_total
 
@@ -22,17 +23,19 @@ global p2_total
 def doubles(num, player, x):
     pyautogui.confirm(f'{player} rolled a double! You got {num} bonus points!', title=f'Round {x}')
 
+
 # this outputs the value of the roll to the screen
 def roll_out(num, player, x):
     pyautogui.confirm(f'{player} rolled {num}!', title=f'Round {x}')
 
 
 def round_results(p1, r1, p2, r2, x):
-    pyautogui.alert(f'{p1}: {r1} points\n{p2}: {r2}', title=f'Round {x}')
+    pyautogui.alert(f'{p1}: {r1} points\n{p2}: {r2} points', title=f'Round {x}')
 
-# this shows the players a running total of the 
+
+# this shows the players a running total of the
 def totals(p1, t1, p2, t2):
-    pyautogui.alert(f'{p1}: {t1} points\n{p2}: {t2}', title='Total')
+    pyautogui.alert(f'{p1}: {t1} points\n{p2}: {t2} points', title='Total')
 
 
 def pause():
@@ -41,9 +44,9 @@ def pause():
 
 def roll(p1, p2, x):
     global p2_round_total, p1_round_total
-    r1_p1 = random.randint(1,6)
-    roll_out(r1_p1,p1, x)
-    r2_p1 = random.randint(1,6)
+    r1_p1 = random.randint(1, 6)
+    roll_out(r1_p1, p1, x)
+    r2_p1 = random.randint(1, 6)
     roll_out(r2_p1, p1, x)
     p1_round = r1_p1 + r2_p1
 
@@ -53,7 +56,7 @@ def roll(p1, p2, x):
     # if doubles + single dice roll
 
     if r1_p1 == r2_p1:
-        double_p1 = random.randint(1,6)
+        double_p1 = random.randint(1, 6)
         doubles(double_p1, p1, x)
         p1_round += double_p1
         p1_round_total = p1_round
@@ -108,6 +111,7 @@ def roll(p1, p2, x):
     t2 = sum(p2_total)
     totals(p1, t1, p2, t2)
 
+
 # adds the score to the list of results
 def p1_add(score):
     global p1_total
@@ -120,7 +124,6 @@ def p2_add(score):
 
 
 def tiebreak(p1, p2, x):
-
     r1_p1 = random.randint(1, 6)
     roll_out(r1_p1, p1, x)
     global p1_total
@@ -145,11 +148,9 @@ def tiebreak(p1, p2, x):
         Prompts.winner(player_2, p2_total_sum)
 
 
-
-
 def game():
     global x
-    for x in range(1,6):
+    for x in range(1, 6):
         roll(player_1, player_2, x)
         pause()
 
@@ -173,14 +174,14 @@ print('''
 ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝         ██║   ██║   ██║       ██║   ██╔══██║██╔══╝      
 ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗       ██║   ╚██████╔╝       ██║   ██║  ██║███████╗    
  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝       ╚═╝    ╚═════╝        ╚═╝   ╚═╝  ╚═╝╚══════╝    
-                                                                                                                     
+
                         ██████╗ ██╗ ██████╗███████╗     ██████╗  █████╗ ███╗   ███╗███████╗                          
     ▄ ██╗▄    ▄ ██╗▄    ██╔══██╗██║██╔════╝██╔════╝    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ▄ ██╗▄    ▄ ██╗▄      
      ████╗     ████╗    ██║  ██║██║██║     █████╗      ██║  ███╗███████║██╔████╔██║█████╗       ████╗     ████╗      
     ▀╚██╔▀    ▀╚██╔▀    ██║  ██║██║██║     ██╔══╝      ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ▀╚██╔▀    ▀╚██╔▀      
       ╚═╝       ╚═╝     ██████╔╝██║╚██████╗███████╗    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗      ╚═╝       ╚═╝       
                         ╚═════╝ ╚═╝ ╚═════╝╚══════╝     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝                          
-                                                                                                                     
+
 ''')
 
 player_1 = Prompts.prompt_p1()
