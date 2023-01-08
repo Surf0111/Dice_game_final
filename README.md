@@ -7,6 +7,9 @@ Option 1
 
 When opened in pycharm, create the virtual environment using requirements.txt in python 3.10
 Install all the packages via the prompt int the top right hand corner untill everything is installed.
+If there are any missing libraries, please open each py file and hover over any red underscored libraries and click the install button:
+![image](https://user-images.githubusercontent.com/101248306/211206528-a16127d8-d120-45c7-a585-1a3e9af3059a.png)
+
 
 Option 2
 
