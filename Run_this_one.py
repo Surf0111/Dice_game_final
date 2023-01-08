@@ -4,6 +4,7 @@ import Prompts
 import pyautogui
 import random
 import time
+from cryptography.fernet import Fernet
 global p1_total
 global p2_total
 
