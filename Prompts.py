@@ -22,7 +22,6 @@ def prompt_p1():
 
     elif option == 'Leaderboard':
         leader_board = Data_handling.fetch_score()
-        print(leader_board)
         pyautogui.alert(leader_board, title='Leaderboard')
         raise SystemExit
 
