@@ -10,6 +10,7 @@ Install 'pip' from this screen by double clicking and adding the package
 After they have installed, open the terminal from within the Pycharm project.
 Run these two commands:
 
-cd Dice_game_final-master
-pip install -r requirements.txt
+1.cd Dice_game_final-master
+
+2.pip install -r requirements.txt
 
